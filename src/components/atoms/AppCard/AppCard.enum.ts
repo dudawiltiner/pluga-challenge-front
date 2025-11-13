@@ -1,0 +1,5 @@
+export const ELEMENTS = {
+  APP_CARD: 'APP_CARD',
+  APP_CARD_IMAGE: 'APP_CARD_IMAGE',
+  APP_CARD_NAME: 'APP_CARD_NAME',
+};

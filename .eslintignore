@@ -1,0 +1,15 @@
+dist/
+node_modules/
+src/styles/
+public/script/
+cypress/results
+cypress/downloads
+README.md
+.next/
+openMergeScript.mjs
+migrate.mjs
+public/manifest.json
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map

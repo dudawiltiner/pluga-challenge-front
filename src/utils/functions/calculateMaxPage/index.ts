@@ -1,0 +1,1 @@
+export { calculateMaxPage } from './calculateMaxPage';

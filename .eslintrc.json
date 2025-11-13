@@ -1,0 +1,90 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "sonarjs"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:sonarjs/recommended",
+    "prettier",
+    "next"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "env": {
+        "jest": true,
+        "node": true
+      },
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "max-lines": "off"
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "project": null
+      }
+    },
+    {
+      "files": ["**/*.cy.ts", "**/*.cy.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": "off",
+        "max-lines": "off",
+        "sonarjs/no-duplicate-string": "off"
+      }
+    },
+    {
+      "files": ["*.config.js", "*.config.ts"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-require-imports": "off"
+      }
+    },
+    {
+      "files": ["next-env.d.ts"],
+      "rules": {
+        "@typescript-eslint/triple-slash-reference": "off"
+      }
+    }
+  ],
+  "rules": {
+    "no-console": 2,
+    "max-lines": [
+      "error",
+      {
+        "max": 100,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "enum",
+        "format": ["UPPER_CASE"]
+      }
+    ],
+    "@typescript-eslint/no-var-requires": 0
+  }
+}
