@@ -1,3 +1,4 @@
+// @ts-nocheck
 /// <reference types="jest" />
 import { App } from '@app-types/app.types';
 

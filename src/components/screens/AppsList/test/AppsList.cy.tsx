@@ -21,7 +21,6 @@ describe('<AppsList />', () => {
   });
 
   it('should render loading spinner when data is loading', () => {
-    // Interceptar a requisição com delay para garantir que o loading apareça
     cy.intercept('GET', '**/ferramentas_search.json', {
       statusCode: 200,
       body: [],
@@ -30,12 +29,8 @@ describe('<AppsList />', () => {
 
     cy.mount(<AppsList />);
 
-    // Verificar que o elemento de loading existe no DOM durante o carregamento
-    // Usamos 'exist' ao invés de 'be.visible' porque o spinner pode ter dimensões 0x0
-    // mas ainda estar presente no DOM quando isLoading é true
     cy.get('.loading-spinner', { timeout: 500 }).should('exist');
 
-    // Aguardar a requisição completar para garantir que o teste não falhe por timeout
     cy.wait('@getAppsDelayed', { timeout: 3000 });
   });
 });

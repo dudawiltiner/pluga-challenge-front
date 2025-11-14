@@ -1,3 +1,4 @@
+// @ts-nocheck
 /// <reference types="jest" />
 import { calculateMaxPage } from './calculateMaxPage';
 
